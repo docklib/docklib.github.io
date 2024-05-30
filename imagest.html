@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stable Diffusion</title>
+    <style>
+        body {
+            display: flex;
+            background-color: #1b1b1b;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            position: fixed;
+            bottom: 10px;
+            width: 95%;
+            border-radius: 35px;
+            border: 3px solid #3b3b3b;
+            overflow: hidden;
+        }
+
+        .textbox {
+            flex-grow: 1;
+            padding: 10px;
+            height: 40px;
+            border: none;
+            color: rgb(195, 195, 195);
+
+            outline: none;
+            background-color: #1b1b1bbb;
+            font-size: 20px;
+            transition: 0.5s;
+        }
+
+        .generate-button {
+            width: 100px;
+            height: 60px;
+            transition: 0.5s;
+            border: none;
+            background-color: #323232;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .generate-button:hover {
+            background-color: #202020;
+        }
+
+        .loader {
+  border: 4px solid rgba(0, 0, 0, .1);
+  border-left-color: transparent;
+  border-radius: 50%;
+}
+
+
+.loader {
+  border: 4px solid rgb(255, 255, 255);
+  border-left-color: transparent;
+  width: 35px; 
+  position: relative;
+  height: 35px;
+  top: 50%;
+
+  left: 50%;
+  animation: spin89345 1s linear infinite;
+}
+
+@keyframes spin89345 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+    </style>
+</head>
+<body>
+
+    <button style="background-color: #323232; cursor: pointer; border-radius: 20px; font-size: 17px; border: none; color: white; width: 100px; height: 40px; top: 10px; right: 10px; position: absolute;" onclick="downloadPNG()">
+        Download
+    </button>
+        <div id="containerl" style="display: none; left: 50%; width: 60px; height: 60px; border-radius: 50%; background-color: rgba(128, 128, 128, 0.288); position: fixed; top: 10px; transform: translateX(-50%);">
+            <div class="loader"></div>
+        </div>
+    
+        <div class="container">
+            <input id="textbox" type="text" class="textbox" placeholder="Type your message here...">
+            <button onclick="generateOutput()" class="generate-button">Generate</button>
+        </div>
+        <div style="z-index: -1; width: 35%;  max-height: auto; max-width: auto; left: 50%; top: 50%; transform: translate(-50%, -55%); border-radius: 15px; position: absolute;" id="">
+            <!-- Output will be displayed here -->
+            <img style=" width: 100%; border-radius: 20px; max-width: auto; " id="img">
+        </div>
+    
+    <script>
+        var imageURLL = null;
+
+        async function query(data) {
+            const response = await fetch(
+                "https://api-inference.huggingface.co/models/CompVis/stable-diffusion-v1-4",
+                {
+                    headers: { Authorization: "Bearer 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" },
+                    method: "POST",
+                    body: JSON.stringify(data),
+                }
+            );
+            const result = await response.blob();
+            return result;
+        }
+
+        async function generateOutput() {
+            const imgElement = document.getElementById('img');
+            const loader = document.getElementById('containerl');
+            loader.style.display = 'block'; 
+            
+            query({"inputs": document.getElementById('textbox').value})
+                .then(response => {
+                    const imageUrl = URL.createObjectURL(response);
+                    imgElement.onload = () => {
+                        loader.style.display = 'none';
+                    };
+                    imgElement.src = imageUrl;
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    loader.style.display = 'none'; 
+                });
+        }
+
+
+        function downloadPNG() {
+            imageURLL = document.getElementById('img').src
+            fetch(imageURLL)
+                .then(response => response.blob())
+                .then(blob => {
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = 'image.png'; 
+                    link.click();
+                    
+                    URL.revokeObjectURL(link.href);
+                })
+                .catch(error => console.error('Error downloading PNG:', error));
+        }
+
+        //downloadPNG(imageURLL);
+
+    </script>
+</body>
+</html>
