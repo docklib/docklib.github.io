@@ -439,12 +439,12 @@ p {
  
   height: 180px;
   transition: 0.5s;
-  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.725);
+  box-shadow: 5px 5px 5px 5px rgba(13, 13, 13, 0.725);
 
 }
 .ImageForGame:hover{
   transform: scale(1.1);
-  box-shadow: 2px 2px 2px 2px rgba(54, 54, 54, 0.725);
+  box-shadow: 2px 2px 2px 2px rgba(79, 79, 79, 0.725);
 
 }
 @keyframes scroll {
@@ -585,11 +585,11 @@ p {
 
 
 
-<div id="CHATDISABLED" style="transition: 0.5s;  opacity: 0; display: none; left: 50%; position: fixed; z-index: 90; top: 50%; transform: translate(-50%, -50%); width: 45%; height: 40%; border-radius: 15px; background-color: rgb(32, 32, 32);">
-  <h1 style="margin: 20px; color: white; text-align: center;">The Chat Room Has Been Disabled</h1>
-  <h3 style="color: white; width: 95%; left: 50%; top: 50%; transform: translate(-50%, -150%); position: absolute;"></h3>
-<p style="color: white; position: absolute; bottom: 80px; left: 10px;"></p>
-<p style="color: white; bottom: 50px; left: 50%; transform: translateX(-50%); position: absolute; text-align: center;">This Will Close In A Few Seconds</p>
+<div id="CHATDISABLED" style="transition: 0.5s;  opacity: 0; display: none; left: 50%; position: fixed; z-index: 90; top: 50%; transform: translate(-50%, -50%); width: 25%; height: 40%; border-radius: 15px; background-color: rgb(32, 32, 32);">
+  <h1 style="margin: 20px; color: white;">Error</h1>
+  <h3 style="color: white; width: 95%; left: 50%; top: 50%; transform: translate(-50%, -150%); position: absolute;">The Webmaster Of This Instance Of Sz Games Has Disabled The Chat Feature</h3>
+<p style="color: white; position: absolute; bottom: 80px; left: 10px;">Code: NEB_CHA4-DIS</p>
+<p style="color: white; bottom: 10px; left: 10px; position: absolute;">Clearing Logs...</p>
 </div>
 <script>
   function chaterror() {
@@ -606,36 +606,6 @@ p {
   }
 </script>
 
-
-<div style="display: none; z-index: 1000;  width: 100%; position: fixed; height: 100%; background-color: #1d1d1d;" id="WeWillBeBackScreen">
-  <style>
-   
-  </style>
-  <div style="position: absolute; top: 20%; left: 50%; width: 300px; transform: translateX(-50%);">
-    <img style="width: 80px; position: relative; left: 50%; transform: translateX(-65%);" src="https://sz-games.github.io/home/G.png">
-    <h1 style="font-size: 23px; color: white; text-align: center;">We'll Be Back Soon!</h1>
-  </div>
-  <p style="background-color: #2727279c; padding: 10px; border-radius: 15px; z-index: 10; color: rgb(255, 255, 255); font-size: 16px; position: fixed; transform: translateX(-50%); bottom: 20px; left: 50%;">There May be More Info On Our <a style="text-decoration: underline; color: white; cursor: pointer;" href="https://discord.gg/XaEPUtUZ7G">Discord Server</a></p>
-
-  <div style="position: absolute; bottom: 0;  z-index: -1; ">
-    <div style="position: absolute; z-index: 5; top: -20px; width: 100%; height: 70%;  background: linear-gradient(to bottom, #1d1d1d, #1d1d1d, rgba(255, 255, 255, 0));"></div>
-    <video id="BGVIDSOM1" style="width: 100%; filter: blur(3px) brightness(80%);" src="" muted loop autoplay>
-      <script> 
-      </script>
-    </video>
-
-  </div>
-</div>
-
-<script>
-  var setscreen = false
-
-  if(setscreen === true) {    
-    document.getElementById('BGVIDSOM1').src = 'https://sz-games.github.io/BGVIDLOW.mp4'
-    document.getElementById('WeWillBeBackScreen').style.display = 'block'
-    document.body.style.overflowX = 'hidden'
-  }
-</script>
 <div id="overlay" style="pointer-events: none; position: fixed; display: none; width: 100%; height: 100%;">
 
 </div>
@@ -723,8 +693,8 @@ p {
  <p id="afkk" >Afk</p>
  <p id="first-steps" >First Steps</p>
 </div>
-<div id="TopMenu"  style="    box-shadow: 0px 0px 7px rgb(19, 19, 19); top: 10px; border-radius: 15px 15px 15px 15px; z-index: 7; position: fixed; overflow-y: hidden; width: 98%; left: 50%; transform: translate(-50%); height: 50px; background-color: #1d1d1d;">
-  <a href="https://sz-games.github.io" aria-label="Home">  <img alt="Icon" fetchpriority="low" src="https://github.com/sz-games/home/blob/main/G.png?raw=true" style="z-index: 7; top: -2px; height: 30px; width: 30px;"> </a>
+<div id="TopMenu"  style=" top: 10px; border-radius: 15px 15px 15px 15px; z-index: 7; position: fixed; overflow-y: hidden; width: 98%; left: 50%; transform: translate(-50%); height: 50px; background-color: #1d1d1d;">
+  <a href="https://sz-games.github.io" aria-label="Home">  <img alt="Icon" fetchpriority="low" src="https://github.com/sz-games/home/blob/main/G.png?raw=true" style="z-index: 7; height: 25px; width: 25px;"> </a>
 
   <h1 style="   font-size: medium; top: 50%; transform: translate(-0%, -50%); left: 50px; color: white; font-family: Arial, Helvetica, sans-serif; position: absolute;">Sz Games</h1>
 
@@ -947,13 +917,13 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
 }
 
 @keyframes SLMenu {
-  from{right: 10px; transform:  translateY(-50%);  opacity: 1;}
-  to{right: -310px; transform:  translateY(-50%); opacity: 0;}
+  from{right: 0; opacity: 1;}
+  to{right: -310px; opacity: 0;}
 }
 
 @keyframes SLMenu2 {
-  from{right: -310px; transform:  translateY(-50%); opacity: 0;}
-  to{right: 10px; transform:  translateY(-50%); opacity: 1;}
+  from{right: -310px; opacity: 0;}
+  to{right: -0px; opacity: 1;}
 }
 
 
@@ -976,18 +946,18 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
 
 <div id="SideMenuBigScreen" style="transition: 0.8s; display: none; position: fixed; z-index: 91; background-color: #1d1d1d7b; width: 100%; height: 100%;">
   
-  <div  style="display: none; top: 50%; transform: translateY(-50%);     box-shadow: 0px 0px 9px rgb(0, 0, 0); position: absolute;  animation: menuM 7s infinite; transition: 0.5s; right: 10px; border: solid gray 3px;  border-radius: 15px; width: 300px; height: 98%; z-index: 95; background-color: #2f2f2f;" id="MMenuBig" >
-    <span onclick="ToggleMenuBig()" class="material-icons notranslate"  style=" cursor: pointer; z-index: 96; font-size: x-large; top: 23px; margin-right: 20px; right: 0; color: white;  position: absolute;">  
+  <div  style="display: none;  position: absolute;  animation: menuM 7s infinite; transition: 0.5s; right: 0px; border: solid gray 3px;  border-radius: 15px 0px 0px 15px; width: 300px; height: 100%; z-index: 95; background-color: #2f2f2f;" id="MMenuBig" >
+    <span onclick="ToggleMenuBig()" class="material-icons notranslate"  style=" cursor: pointer; z-index: 96; font-size: x-large; top: 15px; margin-right: 15px; right: 0; color: white;  position: absolute;">  
      
       close
       
       </span>
-      <span id="SETTINGSMENU1v" onclick="window.location = 'https://sz-games.github.io/settings.html' " class="material-icons notranslate"  style=" cursor: pointer; z-index: 96; font-size: x-large; top: 23px; margin-right: 55px; right: 0; color: white;  position: absolute;">  
+      <span id="SETTINGSMENU1v" onclick="window.location = 'https://sz-games.github.io/settings.html' " class="material-icons notranslate"  style=" cursor: pointer; z-index: 96; font-size: x-large; top: 15px; margin-right: 45px; right: 0; color: white;  position: absolute;">  
      
         settings
         
         </span>
-        <span id="NOTIF" onclick="toggleSetings1()" class="material-icons notranslate"  style="display: none; cursor: pointer; z-index: 96; font-size: x-large; top: 15px; margin-right: 75px; right: 0; color: white;  position: absolute;">  
+        <span id="NOTIF" onclick="toggleSetings1()" class="material-icons notranslate"  style=" cursor: pointer; z-index: 96; font-size: x-large; top: 15px; margin-right: 75px; right: 0; color: white;  position: absolute;">  
      
           notifications
           
@@ -1009,14 +979,14 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
 
         </script>
 
-      <div style="border-radius: 15px;     box-shadow: 0px 0px 7px rgb(19, 19, 19); background-color: #1d1d1d; width: 95.5%; position: relative; top: 8px; left: 5px; height: 50px;">
+      <div style="border-radius: 15px; background-color: #1d1d1d; height: 50px;">
     <div style="position: relative; top: 15px; ">
-      <img src="https://github.com/sz-games/home/blob/main/G.png?raw=true" style="position: absolute; top: -18px; height: 33px; width: 33px;" />
-      <h1 style="color: white; font-size: larger; top: 1px;  position: relative; left: 55px; font-family: Arial, Helvetica, sans-serif; ">Sz Games</h1>
+      <img src="https://github.com/sz-games/home/blob/main/G.png?raw=true" style="position: absolute; top: -15px; height: 30px; width: 30px;" />
+      <h1 style="color: white; font-size: larger; top: 2px;  position: relative; left: 55px; font-family: Arial, Helvetica, sans-serif; ">Sz Games</h1>
     </div>
       </div>
 
-    <div style="overflow-x: hidden; overflow-y: auto; height: 80%; margin-top: 15px;">
+    <div style="overflow-x: hidden; overflow-y: auto; height: 75%;">
 
     <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
 
@@ -1121,8 +1091,8 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
 
     <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
 
-      <a style="text-decoration: none;" href="https://szgamesstatus.statuspage.io/">
-        <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Status (Improved)</h1>
+      <a style="text-decoration: none;" href="./Status.html">
+        <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Status</h1>
       </a>
     
     </div> 
@@ -1892,9 +1862,10 @@ z-index: 1;
       <br></br>
        <!--ADCODE-->
   
+ 
   <ins class="adsbygoogle"
   id="ad-container3"
-  style="position: relative; transition: 0.8s; display: inline-block;  background-color: gray; height: 70px  !important; border-radius: 15px 15px 0px 0px; width: 80%; left: 50%; transform: translate(-50%); display: block; z-index: 20"
+  style="position: relative; transition: 0.8s; display: inline-block;  background-color: gray; height: 70px  !important; border-radius: 15px 15px 0px 0px; width: 60%; left: 50%; transform: translate(-50%); display: block; z-index: 20"
   data-ad-client="ca-pub-1654900800235927"
   data-ad-slot="6959226874"
 
@@ -1907,7 +1878,7 @@ z-index: 1;
 
 <ins class="adsbygoogle"
 id="ad-container"
-style="position: relative; transition: 0.8s; display: inline-block;  background-color: gray; height: 70px  !important;  width: 80%; left: 50%; transform: translate(-50%); display: block; z-index: 20"
+style="position: relative; transition: 0.8s; display: inline-block;  background-color: gray; height: 70px  !important;  width: 60%; left: 50%; transform: translate(-50%); display: block; z-index: 20"
 data-ad-client="ca-pub-1654900800235927"
 data-ad-slot="9203744669"
 
@@ -1923,7 +1894,7 @@ data-ad-slot="9203744669"
 
       <ins class="adsbygoogle"
       id="ad-container"
-      style="position: relative; transition: 0.8s; display: inline-block;  background-color: gray; height: 70px  !important;  width: 80%; left: 50%; transform: translate(-50%); display: block; z-index: 20"
+      style="position: relative; transition: 0.8s; display: inline-block;  background-color: gray; height: 70px  !important;  width: 60%; left: 50%; transform: translate(-50%); display: block; z-index: 20"
       data-ad-client="ca-pub-1654900800235927"
       data-ad-slot="9203744669"
       
@@ -1937,7 +1908,7 @@ data-ad-slot="9203744669"
 
     <ins class="adsbygoogle"
     id="ad-container"
-    style="position: relative; transition: 0.8s; display: inline-block;  background-color: gray; height: 70px  !important; border-radius: 0px 0px 15px 15px; width: 80%; left: 50%; transform: translate(-50%); display: block; z-index: 20"
+    style="position: relative; transition: 0.8s; display: inline-block;  background-color: gray; height: 70px  !important; border-radius: 0px 0px 15px 15px; width: 60%; left: 50%; transform: translate(-50%); display: block; z-index: 20"
     data-ad-client="ca-pub-1654900800235927"
     data-ad-slot="9203744669"
 
@@ -6238,7 +6209,208 @@ function loadGame() {
 
   </script>
   
-
+  <!--div class="bubbles" style="  filter: drop-shadow(0 0 10px white);" >
+  <div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+  </div-->
 </section>
 <script src="confetti.js"></script>
 
