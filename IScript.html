@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inject Script</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    background: rgb(41, 41, 41);
+    margin: 0;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+
+    }
+    
+    
+.header {
+  
+  text-align: center;
+  
+
+  width: auto;
+  font-size: 30px;
+ 
+ 
+}
+
+
+
+</style>
+</head>
+<body>
+<style>
+   
+  
+  
+</style>
+   
+<button onclick="inject()" style="margin: 10px;">
+  Inject
+</button>
+<div style="width: 500px; height: 500px; background-color: black;">
+  <p id="txtconsole" style="white-space: pre-line; font-size: 20px; color: white; font-family: 'Times New Roman', Times, serif;">
+    
+  </p>
+</div>
+<script>
+  function inject() {
+    alert('Injecting Script Please Wait... (you can close this)')
+    setTimeout(() => {
+      document.getElementById('txtconsole').innerHTML = "Preparing..."
+      setTimeout(() => {
+        document.getElementById('txtconsole').innerHTML = document.getElementById('txtconsole').innerHTML +  "\n Downloading..."
+        setTimeout(() => {
+                  document.getElementById('txtconsole').innerHTML = document.getElementById('txtconsole').innerHTML +  "\n Error Script Request Has Been Blocked By Client"
+                  setTimeout(() => {
+                  document.getElementById('txtconsole').innerHTML = document.getElementById('txtconsole').innerHTML +  "\n Retrying..."
+                  setTimeout(() => {
+                  document.getElementById('txtconsole').innerHTML = document.getElementById('txtconsole').innerHTML +  "\n failed to download version 1.0 attempting to install"
+                  setTimeout(() => {
+                                    document.getElementById('txtconsole').innerHTML = document.getElementById('txtconsole').innerHTML +  "\n installing..."
+                                    setTimeout(() => {
+        document.getElementById('txtconsole').innerHTML = document.getElementById('txtconsole').innerHTML +  "\n Error Required Permissions Arent Allowed "
+        setTimeout(() => {
+        document.getElementById('txtconsole').innerHTML = document.getElementById('txtconsole').innerHTML +  "\n Failed To execute script| Error 9 | exit code 56: Permissions Were Rejected By System | Blocked "
+
+       }, 4000);
+       }, 1400);
+                                  }, 3000);
+                }, 1400);
+                
+                }, 4500);
+                }, 800);
+      }, 1400);
+     
+    
+    }, 1400);
+  }
+</script>
+
+
+</body>
+</html>
