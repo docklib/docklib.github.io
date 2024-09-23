@@ -6047,7 +6047,6 @@ style="width: 80%; height: 40px; font-size: 15px; color: white; background-color
 
 </div>
 
-</div>
 
 <div class="box"  id="the bowling club" style="position: relative; float: left;">
   <a href="https://sz-games.com/games/game.html?game=https://sz-games.com/Games9/thebowlingclub/">
@@ -6159,6 +6158,18 @@ style="width: 80%; height: 40px; font-size: 15px; color: white; background-color
       
   </a>
 
+</div>
+
+  <div id="nonefound" style="display: none; height: 400px; width: 100%; ">
+ 
+  <div style="width: max-content; height: max-content; top: 50%; transform: translate(-50%, -50%); position: relative; left: 50%;">
+     <p style="color: white; font-size: 20px; position: relative; text-align: center;">No Games Were Found</p>
+      <br>
+     <a href="https://docs.google.com/forms/d/e/1FAIpQLScx-LVOQHk0Gnsa_PhdtJdhLj3fGx8Z86y0MHPaJD76sLHEbA/viewform" style="color: white;  position: relative; text-align: center;">You Can Request One Here Though</a>
+     <br>
+     <br>
+      <img style="left: 50%; transform: translateX(-55%); position: relative; border-radius: 15px;" src="./notfound.jfif"> 
+    </div>
 </div>
   
 <br>
@@ -6387,14 +6398,36 @@ function searchHandleLoad() {
   const hiddenDivs = document.querySelectorAll('.box');
   const lazyImages = document.querySelectorAll('.ImageForGame');
   if(preloaded===false) {
-  lazyImages.forEach(image => {
-   
-      image.src = image.getAttribute('data-src');
-      image.onload = function() {
-        image.classList.add('showIMG');
+   lazyImages.forEach(image => {
       
-      }
-  });
+        let retries = 0; 
+
+        function loadImage() {
+          
+          image.src = image.getAttribute('data-src');
+
+            
+          image.onload = function() {
+            image.classList.add('showIMG');
+            retries = 0; 
+          };
+
+          image.onerror = function() {
+            retries++;
+            if (retries < 3) {
+              loadImage(); 
+            } else {
+              image.classList.add('showIMG');
+
+              image.src = './fallback.png';
+            }
+          };
+          
+        }
+      
+
+        loadImage();
+      });
   hiddenDivs.forEach(div => {
    
       div.classList.add('show');
@@ -6414,36 +6447,105 @@ document.addEventListener('DOMContentLoaded', handleScroll);
 
 handleScroll();
 
+var input = document.getElementById("SearchBox");
+var elements = document.getElementById("games").getElementsByTagName("div");
 
-  var input, filter, elements, element, i;
-  input = document.getElementById("SearchBox");
-  filter = input.value.toUpperCase();
-  elements = document.getElementById("games");
-  element = elements.getElementsByTagName("div");
- 
+var noMatches = document.getElementById('nonefound');
 
-  function Search() {
-  filter = input.value.toUpperCase();
-  input.addEventListener("input", function() {
-    if (input.value.length > 0) {
-      for (i = 0; i < element.length; i++) {
-        var id = element[i].getAttribute("id");
-        if (id && id.toUpperCase().indexOf(filter) > -1) {
-          element[i].style.display = "";
-          searchHandleLoad();
-        } else {
-          var shouldExclude = element[i].classList.contains("textover");
+function Search() {
+  searchHandleLoad(); 
+
+  input.addEventListener("input", debounce(function() {
+    var filter = input.value.trim().toUpperCase();
+    var found = false;  
+
+    if (filter.length > 0) {
+      for (var i = 0, len = elements.length; i < len; i++) {
+        var element = elements[i];
+        var id = element.getAttribute("id");
+
+        if (id) {
+          var idUpper = id.toUpperCase();
+          var shouldExclude = element.classList.contains("textover");
+
           if (!shouldExclude) {
-            element[i].style.display = "none";
+            if (isExactMatch(idUpper, filter) || isPartialMatch(idUpper, filter) || isSimilar(idUpper, filter)) {
+              element.style.display = "";  
+              found = true;  
+            } else {
+              element.style.display = "none"; 
+            }
           }
         }
       }
     } else {
-      for (var i = 0; i < element.length; i++) {
-        element[i].style.display = "block";
+      //empty
+      for (var i = 0, len = elements.length; i < len; i++) {
+        if (!elements[i].classList.contains("textover")) {
+          elements[i].style.display = "block";
+        }
+      }
+      found = true;  
+    }
+
+    if (!found) {
+      noMatches.style.display = "block"; 
+    } else {
+      noMatches.style.display = "none";  
+    }
+  }, 300));  
+}
+
+
+function isExactMatch(idUpper, filter) {
+  return idUpper === filter || idUpper.startsWith(filter);
+}
+
+function isPartialMatch(idUpper, filter) {
+  return idUpper.includes(filter);
+}
+
+function isSimilar(idUpper, filter) {
+  return levenshteinDistance(idUpper, filter) <= 1; 
+}
+
+function levenshteinDistance(a, b) {
+  var matrix = [];
+  var i, j;
+
+  for (i = 0; i <= b.length; i++) {
+    matrix[i] = [i];
+  }
+
+  for (j = 0; j <= a.length; j++) {
+    matrix[0][j] = j;
+  }
+
+  for (i = 1; i <= b.length; i++) {
+    for (j = 1; j <= a.length; j++) {
+      if (b.charAt(i - 1) == a.charAt(j - 1)) {
+        matrix[i][j] = matrix[i - 1][j - 1];
+      } else {
+        matrix[i][j] = Math.min(
+          matrix[i - 1][j - 1] + 1, 
+          Math.min(matrix[i][j - 1] + 1,
+            matrix[i - 1][j] + 1) 
+        );
       }
     }
-  });
+  }
+
+  return matrix[b.length][a.length];
+}
+
+function debounce(func, delay) {
+  let debounceTimer;
+  return function() {
+    const context = this;
+    const args = arguments;
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => func.apply(context, args), delay);
+  };
 }
 
 var usingLoad = false
