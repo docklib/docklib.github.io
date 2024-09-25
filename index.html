@@ -6458,7 +6458,38 @@ function Search() {
   input.addEventListener("input", debounce(function() {
     var filter = input.value.trim().toUpperCase();
     var found = false;  
+     if(input.value.toLowerCase() === 'hawk tuah') {
+      
+      const hiddenDivs = document.querySelectorAll('.box');
+      const lazyImages = document.querySelectorAll('.ImageForGame');
+        lazyImages.forEach(image => {
+        
+       
 
+       
+          
+          image.src = './hawkt.gif';
+
+            
+          image.onload = function() {
+            image.classList.add('showIMG');
+          };
+
+          image.onerror = function() {
+           
+          
+              image.classList.add('showIMG');
+
+              image.src = './fallback.png';
+            
+          };
+          
+        
+      
+
+      });
+    }
+      
     if (filter.length > 0) {
       for (var i = 0, len = elements.length; i < len; i++) {
         var element = elements[i];
