@@ -3,77 +3,38 @@
 <head>
 
 
-<!-- Google Tag Manager -->
-<script>
-window.onload = function() {
-
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-P93VS8N5');
-}
-  </script>
-  <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
+  
+  <!--Preload-->
+  <link rel="preload" href="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" as="script">
 
+  <!-- Preconnect & DNS Prefetch -->
+  <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com">
 
-     <!--link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"-->
+  <!-- Ads Script-->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1654900800235927" crossorigin="anonymous"></script>
 
+  <!-- Preload fonts-->
+  <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </noscript>
 
-     <!--Icons-->
-     <script src="https://kit.fontawesome.com/26f4207121.js" crossorigin="anonymous"></script>
-     <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style" onload="this.onload=null;this.rel='stylesheet'">
-     
-     <!--ONESIGNAL PUSH-->
-     <script>
-      window.onload = function() {
+  <!-- FontAwesome -->
+  <script async src="https://kit.fontawesome.com/26f4207121.js" crossorigin="anonymous"></script>
+ 
+  <!-- Preconnect & DNS Prefetch -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//kit.fontawesome.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://kit.fontawesome.com">
+ 
 
-          const scriptEly = document.createElement('script');
-
-          scriptEly.src = 'https://cdn.onesignal.com/sdks/OneSignalSDK.js';
-
-        
-          scriptEly.addEventListener('load', () => {
-            window.OneSignal = window.OneSignal || [];
-          OneSignal.push(function() {
-            OneSignal.init({
-              appId: "08b63425-6f02-4ecb-ad79-8bb871e63518",
-              autoResubscribe: true, // This ensures the prompt shows again if dismissed
-
-              safari_web_id: "web.onesignal.auto.54d60a3d-c0d7-4ae1-b490-c29a9cfa7b70",
-              notifyButton: {
-                enable: false,
-              },
-              promptOptions: {
-                  customlink: {
-                    enabled: true, /* Required to use the Custom Link */
-                    style: "button", /* Has value of 'button' or 'link' */
-                    size: "medium", /* One of 'small', 'medium', or 'large' */
-                    color: {
-                      button: '#2e2e2e', /* Color of the button background if style = "button" */
-                      text: 'white', /* Color of the prompt's text */
-                    },
-                    text: {
-                      subscribe: "Subscribe to push notifications", /* Prompt's text when not subscribed */
-                      unsubscribe: "Unsubscribe from push notifications", /* Prompt's text when subscribed */
-                      explanation: "Get updates about new games and known issues.", /* Optional text appearing before the prompt button */
-                    },
-                    unsubscribeEnabled: true, /* Controls whether the prompt is visible after subscription */
-                  }
-                }
-            });
-          });
-                
-          });
-
-          document.head.appendChild(scriptEly);
-
-      }
     
-
-     </script>
-
+  
+  
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C78TXR0XFK"></script>
 <script>
@@ -83,10 +44,12 @@ window.onload = function() {
 
   gtag('config', 'G-C78TXR0XFK');
 </script>
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js');
-  }
+ <script>
+    window.addEventListener('load', function() {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js');
+      }
+    });
 </script>
 
 <link rel="manifest" href="manifest.json">
@@ -120,8 +83,7 @@ name="keywords"
 content="sz games, sz games unblocked, games, unblocked games, school, games, games to play, games on the web, html5 games, sz, sz-games, play games online,  online games"
 /> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1654900800235927"
-crossorigin="anonymous"></script>
+
 <script type="application/ld+json">
   {
       "@context": "http://schema.org",
@@ -173,32 +135,6 @@ position: relative;
 z-index: 1;
 }
 
-.btn-group button {
-  background-color: black; /* Green background */
- 
-  color: white; /* White text */
-  padding: 10px 24px; /* Some padding */
-  cursor: pointer; /* Pointer/hand icon */
-  float: left; /* Float the buttons side by side */
-}
-
-/* Clear floats (clearfix hack) */
-.btn-group:after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.btn-group button:not(:last-child) {
-  border-right: none; /* Prevent double borders */
-}
-
-/* Add a background color on hover */
-.btn-group button:hover {
-  background-color: grey;
-}
-
-/* Header/Logo Title */
 .header-halloween {
   padding: 60px;
   text-align: center;
@@ -295,107 +231,6 @@ img,
 z-index: 1;
 }
 
-.bubbles{
-  position: fixed;
-  width:100%;
-  height: 100%;
-  z-index: 0;
-  overflow:hidden;
-  top:0;
-  left:0;
-}
-.bubble{
-  position: absolute;
-  bottom:-100px;
-  width:40px;
-  height: 40px;
-  background: linear-gradient(to top right, #c68324, #bd0d0d5d);
-  border-radius:50%;
-  opacity:0.5;
-  animation: rise 10s infinite ease-in;
-}
-.bubble:nth-child(1){
-  width:40px;
-  height:40px;
-  left:10%;
-  animation-duration:8s;
-}
-.bubble:nth-child(2){
-  width:20px;
-  height:20px;
-  left:20%;
-  animation-duration:5s;
-  animation-delay:1s;
-}
-.bubble:nth-child(3){
-  width:50px;
-  height:50px;
-  left:35%;
-  animation-duration:7s;
-  animation-delay:2s;
-}
-.bubble:nth-child(4){
-  width:80px;
-  height:80px;
-  left:50%;
-  animation-duration:11s;
-  animation-delay:0s;
-}
-.bubble:nth-child(5){
-  width:35px;
-  height:35px;
-  left:55%;
-  animation-duration:6s;
-  animation-delay:1s;
-}
-.bubble:nth-child(6){
-  width:45px;
-  height:45px;
-  left:65%;
-  animation-duration:8s;
-  animation-delay:3s;
-}
-.bubble:nth-child(7){
-  width:90px;
-  height:90px;
-  left:70%;
-  animation-duration:12s;
-  animation-delay:2s;
-}
-.bubble:nth-child(8){
-  width:25px;
-  height:25px;
-  left:80%;
-  animation-duration:6s;
-  animation-delay:2s;
-}
-.bubble:nth-child(9){
-  width:15px;
-  height:15px;
-  left:70%;
-  animation-duration:5s;
-  animation-delay:1s;
-}
-.bubble:nth-child(10){
-  width:90px;
-  height:90px;
-  left:25%;
-  animation-duration:10s;
-  animation-delay:4s;
-}
-@keyframes rise{
-  0%{
-    bottom:-100px;
-    transform:translateX(0);
-  }
-  50%{
-    transform:translate(100px);
-  }
-  100%{
-    bottom:1080px;
-    transform:translateX(-200px);
-  }
-}
 
 .hello img {
             width: 100%;
@@ -458,9 +293,8 @@ p {
   50% {top: 10px; transform: translate(-50%) scale(1.2); opacity: 0;}
   100% {top: 10px; transform: translate(-50%) scale(1.0); opacity: 1; }
 }
-/* Webkit based browsers (Chrome, Safari) */
 ::-webkit-scrollbar {
-  width: 10px; /* Adjust the width as needed */
+  width: 10px; 
 }
 
 ::-webkit-scrollbar-track {
@@ -468,25 +302,23 @@ p {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(146, 145, 145, 0.378); /* Adjust the color and opacity as needed */
+  background-color: rgba(146, 145, 145, 0.378); 
   border-radius: 20px;
   
 }
 
-/* Firefox */
 
 ::-moz-scrollbar {
-  width: 8px; /* Adjust the width as needed */
+  width: 8px; 
 }
 
 ::-moz-scrollbar-track {
   background-color: transparent;
 }
 ::-moz-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2); /* Adjust the color and opacity as needed */
+  background-color: rgba(0, 0, 0, 0.2); 
 }
 
-/* Hide default scrollbar track */
 ::-webkit-scrollbar-track-piece,
 ::-webkit-scrollbar-corner,
 ::-moz-scrollbar-track-piece {
