@@ -173,7 +173,18 @@ a {
           const h1 = document.createElement('h1');
           h1.appendChild(a);
           contentDiv.appendChild(h1);
-        } else if (line.startsWith('-a-p-') && line.includes('-') && line.endsWith('-/a-/p-')) {
+        }  else if (line.startsWith('-a-2-') && line.includes('-') && line.endsWith('-/a-/2-')) {
+         
+         const linkEndIndex = line.indexOf(' -');
+         const text = line.slice(7, linkEndIndex);
+         const url = line.slice(linkEndIndex + 3, -8);
+         const a = document.createElement('a');
+         a.href = url;
+         a.textContent = text;
+         const h1 = document.createElement('p');
+         h1.appendChild(a);
+         contentDiv.appendChild(h1);
+       } else if (line.startsWith('-a-p-') && line.includes('-') && line.endsWith('-/a-/p-')) {
          
          const linkEndIndex = line.indexOf(' -');
          const text = line.slice(7, linkEndIndex);
