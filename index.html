@@ -6678,6 +6678,55 @@ document.addEventListener('DOMContentLoaded', handleScroll);
 
 handleScroll();
 
+///--------
+var elements = document.getElementById("games").getElementsByTagName("div");
+var selectedCategory = "No Filter"; 
+
+function filterByCategory(selected) {
+  searchHandleLoad()
+  selectedCategory = selected; 
+
+  for (var i = 0, len = elements.length; i < len; i++) {
+    var element = elements[i];
+    var categories = element.getAttribute("category"); 
+    
+    if (categories) {
+      var categoryArray = categories.toUpperCase().split(" "); 
+
+      if (selectedCategory === "No Filter") {
+        element.style.display = ""; 
+      } else {
+        if (categoryArray.includes(selectedCategory.toUpperCase())) {
+          element.style.display = ""; 
+        } else {
+          element.style.display = "none"; 
+        }
+      }
+    }
+  }
+}
+
+function handleRadioChange(event) {
+  const selectedOption = event.target;  
+  const label = document.querySelector(`label[for="${selectedOption.id}"]`);  
+  const selectedCategory = label.getAttribute("data-txt");  
+
+  console.log(`Selected category: ${selectedCategory}`);
+
+  if (selectedOption.id === 'all') {
+    filterByCategory("No Filter");  
+  } else {
+    filterByCategory(selectedCategory);  
+  }
+}
+
+const radioButtons = document.querySelectorAll('.options input[type="radio"]');
+radioButtons.forEach(radio => {
+  radio.addEventListener('change', handleRadioChange);
+});
+
+//Search Below
+
 var input = document.getElementById("SearchBox");
 var elements = document.getElementById("games").getElementsByTagName("div");
 
