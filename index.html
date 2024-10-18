@@ -904,7 +904,6 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
 });
 
 </script>
-
 <style>
   @keyframes menuM {
     0% {border: solid gray 3px;}
@@ -917,19 +916,39 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
   display: inline-block;
   margin-top: 5px;
   padding: 10px;
-  border-radius: 5px;
-
+  border-radius: 10px;
+  height: 75px; 
+  width: 90%;
   color: #000;
-
+  
+  left: 50%;
+  transform: translateX(-50%);
+  border: solid 2px rgb(31, 31, 31);
+  box-shadow: 0px 0px 8px black;
+  background: linear-gradient(to bottom left, rgba(131, 131, 131, 0.801), transparent);
+    overflow: hidden;
   transition: 0.8s;
 }
 
 
 .MenuIt:hover {
   background-color: #565656;
-  border-radius: 30px;
-  transform: translateY(-5px)
+  transform: translateX(-50%);
 }
+.MenuIt h1 {
+  font-size: 21px !important;
+}
+
+.iconsmenu {
+  color: white;
+  position: absolute; 
+  transform: rotate(-16deg) translateY(-50%) scale(3); 
+  right: 20px;
+  top: 50%;
+  color: rgba(255, 255, 255, 0.158);
+  
+}
+
 
 @keyframes SLMenu {
   from{right: 10px; transform:  translateY(-50%);  opacity: 1;}
@@ -961,28 +980,18 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
 
 <div id="SideMenuBigScreen" style="transition: 0.8s; display: none; position: fixed; z-index: 91; background-color: #1d1d1d7b; width: 100%; height: 100%;">
   
-  <div  style="display: none; top: 50%; transform: translateY(-50%);     box-shadow: 0px 0px 9px rgb(0, 0, 0); position: absolute;  animation: menuM 7s infinite; transition: 0.5s; right: 10px; border: solid gray 3px;  border-radius: 15px; width: 300px; height: 98%; z-index: 95; background-color: #2f2f2f;" id="MMenuBig" >
+  <div  style="display: none; top: 50%; transform: translateY(-50%);     box-shadow: 0px 0px 9px rgb(0, 0, 0); position: absolute;  animation: menuM 7s infinite; transition: 0.5s; right: 10px; border: solid gray 3px;  border-radius: 15px; width: 325px; height: 98%; z-index: 95; background-color: #2f2f2f;" id="MMenuBig" >
     <span onclick="ToggleMenuBig()" class="material-icons notranslate"  style=" cursor: pointer; z-index: 96; font-size: x-large; top: 23px; margin-right: 20px; right: 0; color: white;  position: absolute;">  
      
       close
       
       </span>
-      <span id="SETTINGSMENU1v" onclick="window.location = 'https://sz-games.com/settings.html' " class="material-icons notranslate"  style=" cursor: pointer; z-index: 96; font-size: x-large; top: 23px; margin-right: 55px; right: 0; color: white;  position: absolute;">  
+      <span id="SETTINGSMENU1v" onclick="window.location = 'https://sz-games.github.io/settings.html' " class="material-icons notranslate"  style=" cursor: pointer; z-index: 96; font-size: x-large; top: 23px; margin-right: 55px; right: 0; color: white;  position: absolute;">  
      
         settings
         
         </span>
-        <span id="NOTIF" onclick="toggleSetings1()" class="material-icons notranslate"  style="display: none; cursor: pointer; z-index: 96; font-size: x-large; top: 15px; margin-right: 75px; right: 0; color: white;  position: absolute;">  
-     
-          notifications
-          
-          </span>
-
-          <script>
-
-            
-          </script>
-
+       
         <script>
           const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
@@ -996,92 +1005,113 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
 
       <div style="border-radius: 15px;     box-shadow: 0px 0px 7px rgb(19, 19, 19); background-color: #1d1d1d; width: 95.5%; position: relative; top: 8px; left: 5px; height: 50px;">
     <div style="position: relative; top: 15px; ">
-      <img src="https://sz-games.com/home/G.png?raw=true" style="position: absolute; top: -18px; height: 33px; width: 33px;" />
+      <img src="/G.png?raw=true" style="position: absolute; top: -18px; height: 33px; width: 33px;" />
       <h1 style="color: white; font-size: larger; top: 1px;  position: relative; left: 55px; font-family: Arial, Helvetica, sans-serif; ">Sz Games</h1>
     </div>
       </div>
 
-    <div style="overflow-x: hidden; overflow-y: auto; height: 80%; margin-top: 15px;">
+    <div style="overflow-x: hidden; overflow-y: auto; height: 90%; margin-top: 10px;">
 
-    <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
+    <div class="MenuIt" style="">
 
       <a style="text-decoration: none;" href="./index.html">
-        <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Home</h1>
+        <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">
+          
+          Home 
+          
+        </h1>
+        <span class="material-icons notranslate iconsmenu" >
+          home
+        </span>
       </a>
     
     </div> 
 
-    <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
+    <div class="MenuIt" style="">
 
       <a style="text-decoration: none;" href="./Privacy-Policy.html">
         <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Privacy Policy</h1>
+        <span class="material-icons notranslate iconsmenu" >
+          policy
+        </span>
       </a>
 
     </div> 
 
-    <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
+    <div class="MenuIt" style="">
 
       <a style="text-decoration: none;" href="./terms-of-service.html">
         <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Terms Of Service</h1>
+        <span class="material-icons notranslate iconsmenu" >
+          info
+        </span>
       </a>
-
+      
     </div> 
 
-    <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
-
-      <a style="text-decoration: none;" href="./FAQ.html">
-        <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">FAQ</h1>
-      </a>
-
-    </div> 
-
-    <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
-
-      <a style="text-decoration: none;" href="./MessageUN.html">
-        <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Unblocker</h1>
-      </a>
-
-    </div> 
-
-    <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
-
-      <a style="text-decoration: none;" href="https://sz-games.com/games/game.html?game=https://mr-funkinguy.github.io/MOVIES/">
-        <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Movies</h1>
-      </a>
-
-    </div> 
-
-
-
-
-    <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
+    <div class="MenuIt" style="background: linear-gradient(to bottom left, rgb(113, 0, 148), rgb(153, 59, 177), rgb(193, 24, 235));">
 
       <a style="text-decoration: none;" href="https://forms.gle/6R1E28R33RvK7y486">
         <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Game Request</h1>
+        <span class="material-icons notranslate iconsmenu" >
+          assignment
+        </span>
       </a>
     
     </div> 
 
-    <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
+    <div class="MenuIt" style=" background: linear-gradient(to bottom left, rgb(196, 140, 67), rgb(223, 115, 14));">
 
       <a style="text-decoration: none;" href="https://forms.gle/3eanrSMcAHdf9rTy6">
         <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Report A Bug</h1>
+        <span class="material-icons notranslate iconsmenu" style="  color: rgba(255, 255, 255, 0.418);" >
+          bug_report
+        </span>
       </a>
     
     </div> 
 
-    <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
+    <div class="MenuIt" style="background: linear-gradient(to bottom left, rgb(107, 138, 146), rgb(11, 204, 204));">
 
       <a style="text-decoration: none;" href="https://forms.gle/1EoD5k5HZSA8yd8ZA">
         <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Submit A Review</h1>
+        <span class="material-icons notranslate iconsmenu" style="" >
+          rate_review
+        </span>
       </a>
     
     </div> 
 
-    <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
+    <div class="MenuIt" style="  background: linear-gradient(to bottom left, rgba(25, 201, 255, 0.555), rgb(25, 87, 116));">
 
-      <a style="text-decoration: none;" href="https://sz-games.com/BetaTest.html">
+      <a style="text-decoration: none;" href="./MessageUN.html">
+        <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Unblocker</h1>
+        <span class="material-icons notranslate iconsmenu" >
+          cloud
+        </span>
+      </a>
+
+    </div> 
+
+    <div class="MenuIt" style="  background: linear-gradient(to bottom left, rgba(57, 113, 233, 0.801), rgb(31, 51, 68));">
+
+      <a style="text-decoration: none;" href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/MOVIES/">
+        <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Movies</h1>
+        <span class="material-icons notranslate iconsmenu" >
+          movie
+        </span>
+      </a>
+
+    </div> 
+
+
+    <div class="MenuIt" style="">
+
+      <a style="text-decoration: none;" href="/BetaTest.html">
         <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Beta Test Portal</h1>
+        <span class="material-icons notranslate iconsmenu" >
+          sports_esports
+        </span>
       </a>
     
     </div> 
@@ -1096,63 +1126,63 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
     
     </div--> 
 
-    <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
+    <div class="MenuIt" style="">
 
       <a style="text-decoration: none;" href="./FNF.html">
         <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Friday Night Funkin</h1>
+        <span class="material-icons notranslate iconsmenu" >
+          sports_esports
+        </span>
       </a>
     
     </div> 
 
-    <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
+    <div class="MenuIt" style="">
 
       <a style="text-decoration: none;" href="./reviews.html">
         <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Reviews</h1>
+        <span class="material-icons notranslate iconsmenu" >
+          comment
+        </span>
       </a>
     
     </div> 
 
-    <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
+    <div class="MenuIt" style="">
 
       <a style="text-decoration: none;" href="https://szgamesstatus.statuspage.io/">
         <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Status (Improved)</h1>
+        <span class="material-icons notranslate iconsmenu" >
+          dns
+        </span>
       </a>
     
     </div> 
 
-    <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
+    <div class="MenuIt" style="">
 
       <a style="text-decoration: none;" href="./About.html">
         <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">About</h1>
+        <span class="material-icons notranslate iconsmenu" >
+          import_contacts
+        </span>
       </a>
     
     </div> 
     
-    <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
 
-      <a style="text-decoration: none;" href="./Tools/voiceAI.html">
-        <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Sound identifier AI</h1>
-      </a>
-    
-    </div> 
-
-    <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
-
-      <a style="text-decoration: none;" href="./IMAGEAI.html">
-        <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Image Classification AI</h1>
-      </a>
-    
-    </div> 
-
-    <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
+    <div class="MenuIt" style="">
 
       <a style="text-decoration: none;" href="./partners.html">
         <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Partners</h1>
+        <span class="material-icons notranslate iconsmenu" >
+          handshake
+        </span>
       </a>
     
     </div> 
 
-    <div class="MenuIt" onclick="toggleMENU107()" style="height: 35px; top: 35px; width: 100%; position: relative;">
+    <div class="MenuIt" onclick="toggleMENU107()" style="">
 
         <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">IFRAME</h1>
       </a>
