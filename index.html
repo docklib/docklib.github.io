@@ -2351,6 +2351,39 @@ style=" height: 40px; box-shadow: 0px 0px 8px #000000; font-size: 15px; color: w
 </div>
 
   
+<div class="ipAR" onclick="randomGamelol()" style="z-index: 75; cursor: pointer; position: fixed; bottom: 25px; left: 20px; height: 40px; border-radius: 20px; background-color: #1d1d1d; display: flex; align-items: center; justify-content: center; transition: width 0.3s ease; padding: 5px; overflow: hidden;" id="pickforme">
+
+  <span class="material-icons notranslate" id="icon" style="cursor: pointer; opacity: 1; top: 50%; transform: translate(-50%, -50%); position: absolute; font-size: larger; left: 50%; color: white; transition: opacity 0.3s ease, transform 0.3s ease;">
+    shuffle
+  </span>
+
+  <span id="tooltipText" style="white-space: nowrap; opacity: 0; color: white; font-size: 14px; transition: opacity 0.3s ease, transform 0.3s ease; transform: translateX(-10px); margin-left: 5px;">
+    Random Game
+  </span>
+</div>
+
+<style>
+  #pickforme:hover #icon {
+    opacity: 0 !important;
+    transform: translateY(-10px) !important;
+  }
+
+  #pickforme:hover #tooltipText {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+  }
+
+  #pickforme:hover {
+    width: 120px !important; 
+  }
+
+  #pickforme {
+    
+    width: 40px !important; 
+  }
+</style>
+
+  
 <div id="games">
 
 
@@ -6251,6 +6284,29 @@ window.addEventListener("scroll", function() {
 
  
 <script>
+
+
+function randomGamelol() {
+  
+  const gameItems = document.querySelectorAll('#games .box');
+
+
+  if (gameItems.length > 0) {
+
+    const randomIndex = Math.floor(Math.random() * gameItems.length);
+
+    const randomGame = gameItems[randomIndex];
+
+    const anchorTag = randomGame.querySelector('a');
+
+    const gameUrl = anchorTag.href;
+
+    window.location.href = gameUrl;
+  } else {
+    console.error("No game items found in the #games container.");
+  }
+}
+
 
 const imageContainer = document.getElementById("games");
 
