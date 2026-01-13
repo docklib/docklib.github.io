@@ -931,34 +931,6 @@
       </a>
     </div>
   </div>
-
-  <script>
-    var IsOpenLang = false
-
-    var myElement = document.getElementById('TopMenu')
-    var Isscrolled = false
-    window.addEventListener('scroll', function () {
-      if (window.pageYOffset > 350) {
-        if (Isscrolled === false) {
-          myElement.style.animation = 'scroll 0.8s'
-          myElement.style.top = '-50%'
-          Isscrolled = true
-          //console.log("its false")
-        } else {
-          Isscrolled = true
-        }
-      } else if (window.pageYOffset < 350) {
-        if (Isscrolled === true) {
-          //console.log("its true")
-          myElement.style.animation = 'scroll2 0.3s'
-          myElement.style.top = '10px'
-          Isscrolled = false
-        } else {
-          Isscrolled = false
-        }
-      }
-    })
-  </script>
   <style>
     @keyframes menuM {
       0% {
