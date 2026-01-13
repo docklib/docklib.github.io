@@ -399,6 +399,7 @@ function performanceMode() {
                   #TopMenu {
                                 border-radius: 0 !important;
                                 box-shadow: none !important;
+                                height: 90px !important;
 
                   }
                   .featgameit {
