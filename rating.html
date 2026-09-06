@@ -39,38 +39,6 @@
       
     ></script>
 
-    
-    <script>
-      window.googletag = window.googletag || { cmd: [] }
-
-      let bannerSlot728x90
-      let interstitialSlot
-      googletag.cmd.push(function () {
-        bannerSlot728x90 = googletag
-          .defineSlot('/22921845643/SZ_Games_Top_Leaderboard', [728, 90], 'div-gpt-ad-1744679821427-0')
-          .addService(googletag.pubads())
-
-        interstitialSlot = googletag.defineOutOfPageSlot(
-          '/22921845643/SZ_Games_Interstitial',
-          googletag.enums.OutOfPageFormat.INTERSTITIAL
-        )
-
-        if (interstitialSlot) {
-          interstitialSlot.addService(googletag.pubads()).setConfig({
-            interstitial: {
-              triggers: {
-                navBar: true,
-                unhideWindow: true,
-              },
-            },
-          })
-        }
-
-        googletag.pubads().enableSingleRequest()
-        googletag.enableServices()
-      })
-    </script>
-
     <style>
       /* Reset and Base Styles */
       *,
@@ -376,11 +344,13 @@
     </div>
 
     <div class="ad-container">
-      <div id="div-gpt-ad-1744679821427-0" class="header-ad" style="width: 728px; height: 90px; margin-bottom: 4px">
+      <div class="header-ad" style="width: 728px; height: 90px; margin-bottom: 4px; display: flex; justify-content: center;">
+        <ins class="adsbygoogle"
+          style="display:inline-block;width:728px;height:90px"
+          data-ad-client="ca-pub-3723218062742398"
+          data-ad-slot="6369146386"></ins>
         <script>
-          googletag.cmd.push(function () {
-            googletag.display(bannerSlot728x90)
-          })
+          (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
       </div>
     </div>
@@ -429,11 +399,6 @@
         window.location = 'https://sz-games.com'
       }
 
-    </script>
-    <script>
-      googletag.cmd.push(function () {
-        googletag.display(interstitialSlot)
-      })
     </script>
   </body>
 </html>

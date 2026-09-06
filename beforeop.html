@@ -28,47 +28,6 @@
       
     ></script>
 
-    
-    <script>
-      window.googletag = window.googletag || { cmd: [] }
-
-      let bannerSlot728x90
-      let interstitialSlot
-      let anchorSlot
-
-      googletag.cmd.push(function () {
-        bannerSlot728x90 = googletag
-          .defineSlot('/22921845643/SZ_Games_Top_Leaderboard', [728, 90], 'div-gpt-ad-1744679821427-0')
-          .addService(googletag.pubads())
-
-        interstitialSlot = googletag.defineOutOfPageSlot(
-          '/22921845643/SZ_Games_Interstitial',
-          googletag.enums.OutOfPageFormat.INTERSTITIAL
-        )
-
-        anchorSlot = googletag.defineOutOfPageSlot(
-          '/22921845643/SZ_Games_Bottom_Anchor',
-          googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
-        )
-
-        anchorSlot.addService(googletag.pubads())
-
-        if (interstitialSlot) {
-          interstitialSlot.addService(googletag.pubads()).setConfig({
-            interstitial: {
-              triggers: {
-                navBar: true,
-                unhideWindow: true,
-              },
-            },
-          })
-        }
-
-        googletag.pubads().enableSingleRequest()
-        googletag.enableServices()
-      })
-    </script>
-
     <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style" />
     <script>
       // Material Icons font loading
@@ -350,14 +309,15 @@
             </div>
 
             <div
-              id="div-gpt-ad-1744679821427-0"
               class="header-ad"
-              style="width: 728px; height: 90px; margin-bottom: 4px"
+              style="width: 728px; height: 90px; margin-bottom: 4px; display: flex; justify-content: center;"
             >
+              <ins class="adsbygoogle"
+                style="display:inline-block;width:728px;height:90px"
+                data-ad-client="ca-pub-3723218062742398"
+                data-ad-slot="6369146386"></ins>
               <script>
-                googletag.cmd.push(function () {
-                  googletag.display(bannerSlot728x90)
-                })
+                (adsbygoogle = window.adsbygoogle || []).push({});
               </script>
             </div>
 
