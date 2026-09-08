@@ -1,0 +1,7 @@
+.git
+.gitignore
+.kamal
+.github
+config
+node_modules
+scripts

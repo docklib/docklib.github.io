@@ -1,0 +1,33 @@
+# Kamal 2 deployment for sz-games.com (docklib.github.io)
+service: sz-games
+image: senty-au/sz-games
+
+servers:
+  web:
+    - themarzlibrary
+
+proxy:
+  host: sz-games.com, www.sz-games.com
+  app_port: 80
+  ssl: false
+  healthcheck:
+    path: /v1/health
+    interval: 5
+    timeout: 3
+
+registry:
+  server: ghcr.io
+  username: rusya13
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+builder:
+  arch: amd64
+  context: .
+
+volumes:
+  - /srv/sz-games-assets:/var/www/games:ro
+  - /srv/themarzlibrary-assets:/var/www/legacy_games:ro
+
+ssh:
+  user: kamal
