@@ -4,7 +4,10 @@ image: senty-au/sz-games
 
 servers:
   web:
-    - themarzlibrary
+    hosts:
+      - themarzlibrary
+    options:
+      memory: 64m
 
 proxy:
   host: sz-games.com, www.sz-games.com
