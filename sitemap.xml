@@ -215,4 +215,14 @@
     <lastmod>2026-09-30</lastmod>
     <priority>0.60</priority>
   </url>
+  <url>
+    <loc>https://sz-games.com/BasketRandom.html</loc>
+    <lastmod>2026-09-30</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://sz-games.com/Pacman.html</loc>
+    <lastmod>2026-09-30</lastmod>
+    <priority>0.80</priority>
+  </url>
 </urlset>

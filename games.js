@@ -2505,7 +2505,7 @@ const gamesData = [
     id: 'pacman',
     name: 'Pacman',
     categories: ['Casual'],
-    url: './games/game.html?game=/pacman',
+    url: './Pacman.html',
     imgSrc: './cover/pacman.jfif',
   },
   {
@@ -2575,7 +2575,7 @@ const gamesData = [
     id: 'basket random',
     name: 'Basket Random',
     categories: ['Casual'],
-    url: './games/game.html?game=/Games11/basketrandom',
+    url: './BasketRandom.html',
     imgSrc: './cover/basketr.png',
   },
   {
