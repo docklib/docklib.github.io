@@ -42,8 +42,10 @@ if (isMobile) {
 
 document.getElementById('TEST3').addEventListener('click', function () {
   searchHandleLoad()
+  // Newest games are at the end of #games; stop there rather than at the intro text below it.
+  var games = document.getElementById('games')
   window.scroll({
-    top: document.body.scrollHeight,
+    top: games.getBoundingClientRect().bottom + window.scrollY - window.innerHeight,
     left: 0,
     behavior: 'smooth',
   })
