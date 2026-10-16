@@ -1,3 +1,35 @@
+# docklib.github.io (serves sz-games.com)
+
+Unblocked-games portal for school students: 250+ games, retro and emulators, tab cloaking, panic button. The repo is named `docklib` but it deploys **sz-games.com**. It is a separate site from `sz-games/sz-games.github.io` (only the games are shared). Facts below were checked on 2026-10-16. Full audit: `docs/AUDIT-2026-10.md`.
+
+| | |
+|---|---|
+| Live URLs | https://sz-games.com (www redirects here). `docklib.github.io` redirects to it too (stale GitHub Pages config, see PROPOSALS) |
+| Stack | Static HTML/CSS/vanilla JS, no build step. `nginx:alpine` in Docker |
+| Runs on | Kamal service `sz-games`, container `sz-games-web-*` on host `themarzlibrary` (Netcup VPS), 64 MB limit. Cloudflare in front, then Caddy/kamal-proxy |
+| Deploys | `.github/workflows/deploy.yml` on every push to `main` (and manual run): Tailscale, then `kamal deploy`, then a smoke test of `https://sz-games.com/` |
+| Config | `config/deploy.yml`, `Dockerfile`, `nginx.conf`. Registry password comes from 1Password via `.kamal/secrets` (reference only, no value in git) |
+| Game files | Not in this repo. 31 `sz-games/*` repos are cloned by `scripts/sync-games.sh` into `/srv/sz-games-assets` on the host and mounted read-only at `/var/www/games` |
+| Analytics and ads | Plausible (`data-domain="sz-games.com"`), Google Analytics `G-C78TXR0XFK`, AdSense `ca-pub-3723218062742398`, ads.txt in repo. my-seo: no property id is recorded for this site yet |
+| Backups | Repo holds the site (git). `/srv/sz-games-assets` is in the `sz-games` job of `senty-backup` on themarzlibrary (restic). No database. Restore not recorded as tested |
+| Owner | rus (deploy and server). Original site by Bobby |
+
+## Run locally
+
+```
+python3 -m http.server 8000      # pages and links only; games need /var/www/games from the server
+docker build -t sz-games . && docker run -p 8080:80 sz-games
+```
+
+## More docs
+
+- `docs/ARCHITECTURE.md` how it fits together
+- `docs/CHANGELOG-TECH.md` technical changes with dates
+- `docs/PROPOSALS.md` open upgrades and cleanups
+- `docs/AUDIT-2026-10.md` the October 2026 audit report
+
+---
+
 <p align="center">
  
   <img src="https://sz-games.com/G-Google.png" width="150px" height="150px">

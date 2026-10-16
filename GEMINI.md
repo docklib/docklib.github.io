@@ -4,7 +4,7 @@
 **Sz Games** is a static web-based game aggregation platform designed primarily for school environments. It focuses on providing "unblocked" access to web games using techniques like tab cloaking and `about:blank` embedding. The site features a library of over 250 games, including retro titles, emulators, and popular web games.
 
 ## Architecture
-The project is a **static website** hosted on GitHub Pages. It does not use a backend database or server-side rendering language. It relies on:
+The project is a **static website** served by nginx in a Kamal container on the `themarzlibrary` host (see README.md). It does not use a backend database or server-side rendering language. It relies on:
 * **Frontend:** HTML5, CSS3, and Vanilla JavaScript.
 * **Homepage catalogue:** The canonical game cards (their names, descriptions/labels, and links) are present directly in `index.html` inside `#games`. This is intentional: crawlable game content must remain in the initial HTML and must not depend on scrolling or client-side rendering.
 * **Legacy catalogue code:** `games.js` and `script.js` are used by legacy pages, but are not loaded by the homepage. Do not treat them as the homepage source of truth without introducing a static build step that emits equivalent HTML into `index.html`.
@@ -20,7 +20,7 @@ The project is a **static website** hosted on GitHub Pages. It does not use a ba
 ### Content
 *   **`games/`**: Directory containing HTML files for individual games or iframed content.
 *   **`cover/`**: Stores game thumbnails and cover images.
-*   **`_config.yml`**: Minimal Jekyll configuration (primarily for GitHub Pages settings).
+*   **`_config.yml`**: Minimal Jekyll configuration (only used by the old GitHub Pages build, which still exists but is not the live site).
 
 ## Development Workflow
 
