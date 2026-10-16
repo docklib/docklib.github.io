@@ -411,14 +411,14 @@ font-size: 15px;  color: white;
             txt_logs.innerHTML = 'Leading The Data...';
           }, 500);
           setTimeout(() => {
-            txt_logs.innerHTML = data;
+            txt_logs.textContent = data;
           }, 1000);
           setTimeout(() => {
             txt_logs.style.wordWrap = 'break-word';
             txt_logs.style.whiteSpace = 'pre-wrap';
           }, 1500);
           setTimeout(() => {
-            txt_logs.innerHTML = data;
+            txt_logs.textContent = data;
             txt_logs.scrollTop = txt_logs.scrollHeight;
           
           }, 2000);
