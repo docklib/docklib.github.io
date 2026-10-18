@@ -17,6 +17,17 @@ proxy:
     path: /v1/health
     interval: 5
     timeout: 3
+  # Shared kamal-proxy on this host: keep this run block identical to the
+  # other themarzlibrary apps, or a reboot from one app reverts the others.
+  run:
+    version: v0.10.0
+    http_port: 8082
+    https_port: 8443
+    metrics_port: 1318
+    bind_ips:
+      - 127.0.0.1
+    options:
+      env: GOMEMLIMIT=64MiB
 
 registry:
   server: ghcr.io
