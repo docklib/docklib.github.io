@@ -7,7 +7,7 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY . /var/www/html
 
 # Clean git and deploy configs from image
-RUN rm -rf /var/www/html/.git /var/www/html/.kamal /var/www/html/config
+RUN cd /var/www/html && rm -rf .git .kamal config docs scripts README.md GEMINI.md SECURITY.md suggest.md Dockerfile .dockerignore nginx.conf _config.yml
 
 EXPOSE 80
 
